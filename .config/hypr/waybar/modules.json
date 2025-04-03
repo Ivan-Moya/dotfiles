@@ -29,18 +29,15 @@
     "tooltip-format-charging": "{time} (󰢟 charging), at {capacity}%",
     "tooltip-format-discharging": "{time} (󱧦 discharging), at {capacity}%"
   },
-   // Rofi Application Launcher
-    "custom/appmenu": {
-        // START APPS LABEL
-        "format": "󰣇 ",
-        // END APPS LABEL
-        "on-click": "rofi -show drun -theme ~/.config/hypr/rofi/launcher.rasi",
-        "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
-        "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
-    },
-  
-   
-  
+  // Rofi Application Launcher
+  "custom/appmenu": {
+    // START APPS LABEL
+    "format": "󰣇 ",
+    // END APPS LABEL
+    "on-click": "rofi -show drun -theme ~/.config/hypr/rofi/launcher.rasi",
+    "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
+    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+  },
   "bluetooth": {
     "format": "",
     "format-connected": "󰂱",
@@ -140,7 +137,6 @@
     ],
     "orientation": "horizontal"
   },
-  /*
   "hyprland/workspaces": {
     "active-only": false,
     "all-outputs": true,
@@ -165,81 +161,29 @@
       "*": 5
     }
   }, 
-  */
-  
-    "hyprland/workspaces": {
-		"format": "{name} : {icon}",
-		"format-icons": {
-			"1": "",
-			"2": "",
-			"3": "",
-			"4": "",
-			"5": "",
-			"active": "",
-			"default": ""
-    		},
-        "persistent-workspaces": {
-      		"Virtual-1": [1, 2, 3, 4, 5]
-    		}
-        },
-        
-/*        
-              "hyprland/workspaces": {
-        "format": "{icon} {windows}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "on-click": "activate",
-        "window-rewrite-default": "",
-        "window-rewrite": {
-        "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-        "class<firefox>": "", // Windows whose classes are "firefox"
-        "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github"
-        "class<firefox> title<.*twitch|youtube.*>": "",
-        "class<google-chrome>": "",
-        "class<google-chrome> title<.*github.*>": "",
-        "class<google-chrome> title<.*twitch|youtube.*>": "",
-        "class<Alacritty>": "",
-        "class<kitty>": "",
-        "class<org.kde.konsole>": "",
-        "code": "",
-         "intellij": "",
-        "class<thunderbird>": "",
-        "class<vlc>": "󰕼",
-        "class<thunar>": "",
-        "class<org.kde.dolphin>": "",
-        "class<org.kde.kate>": "",
-        "class<libreoffice-draw>": "",
-        "class<libreoffice-writer>": "",
-        "class<libreoffice-calc>": "",
-        "class<libreoffice-impress>": "",
-        },
-},  
-  */
 
-// waybar-mpd
-    "mpd": {
-        "interval": 2,
-        "unknown-tag": "N/A",
-
-        "format": "{stateIcon} {artist} - {title}",
-        "format-disconnected": " Disconnected",
-        "format-paused": "{stateIcon} {artist} - {title}",
-        "format-stopped": "Stopped ",
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)",
-		// Commands to execute on events
-        "on-click": "mpc toggle",
-        "on-click-middle": "mpc prev",
-        "on-click-right": "mpc next",
-        "on-update": "",
-        "on-scroll-up": "mpc seek +00:00:01",
-        "on-scroll-down": "mpc seek -00:00:01",
-        "smooth-scrolling-threshold": 1,
-    },  
+  "mpd": {
+    "interval": 2,
+    "unknown-tag": "N/A",
+    "format": "{stateIcon} {artist} - {title}",
+    "format-disconnected": " Disconnected",
+    "format-paused": "{stateIcon} {artist} - {title}",
+    "format-stopped": "Stopped ",
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    // Commands to execute on events
+    "on-click": "mpc toggle",
+    "on-click-middle": "mpc prev",
+    "on-click-right": "mpc next",
+    "on-update": "",
+    "on-scroll-up": "mpc seek +00:00:01",
+    "on-scroll-down": "mpc seek -00:00:01",
+    "smooth-scrolling-threshold": 1,
+  },
   "network": {
     "format": "{icon}",
     "format-disconnected": "󰖪",
@@ -288,7 +232,12 @@
     "device": "intel_backlight",
     "format": "{icon}",
     "tooltip-format": "{icon}{percent}%",
-    "format-icons": ["󰃞","󰃝","󰃟","󰃠"]
+    "format-icons": [
+      "󰃞",
+      "󰃝",
+      "󰃟",
+      "󰃠"
+    ]
   },
   "backlight/slider": {
     "max": 100,
@@ -299,7 +248,7 @@
   "custom/power-button": {
     "format": "",
     "on-click": "wlogout",
-   // "on-click": "~/.config/hypr/rofi/rofi-powermenu"
+    // "on-click": "~/.config/hypr/rofi/rofi-powermenu"
     "tooltip": false
   },
   "image": {
@@ -312,19 +261,18 @@
     "on-click": "sleep 0.1 && toggle-keyboard.sh",
     "tooltip": false
   },
-
-    "custom/updates": {
-        "format": "   {}",
-        "escape": true,
-        "return-type": "json",       
-        "exec": "~/.config/hypr/scripts/updates.sh",
-        "restart-interval": 60,
-        "on-click": "alacritty --class dotfiles-floating -e ~/.config/hypr/scripts/installupdates.sh",
-        "on-click-right": "~/.config/hypr/scripts/software.sh"
-    },
-  "tray":{
+  "custom/updates": {
+    "format": "   {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/hypr/scripts/updates.sh",
+    "restart-interval": 60,
+    "on-click": "alacritty --class dotfiles-floating -e ~/.config/hypr/scripts/installupdates.sh",
+    "on-click-right": "~/.config/hypr/scripts/software.sh"
+  },
+  "tray": {
     "icon-size": 20,
-    "spacing":5
+    "spacing": 5
   },
   "custom/pacman": {
     "format": " {} update available",

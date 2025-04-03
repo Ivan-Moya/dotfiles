@@ -1,29 +1,23 @@
 {
     // General Settings
-
     // Position TOP
     "layer": "top",
     "margin-bottom": 0,
-    "spacing":4,
-
-    
+    "spacing": 4,
     "layer": "top",
     "margin-left": 0,
-    "margin-right": 0,    
+    "margin-right": 0,
     "spacing": 0,
-
     // Load Modules
     "include": [
-       // "~/dotfiles/.settings/waybar-quicklinks.json",
+        // "~/dotfiles/.settings/waybar-quicklinks.json",
         "~/.config/hypr/waybar/modules.json"
     ],
-
     // Modules Left
     "modules-left": [
         "custom/appmenu",
         "hyprland/window",
     ],
-
     // Modules Center
     "modules-center": [
         "hyprland/workspaces",
@@ -31,10 +25,9 @@
         "mpd",
         "tray",
     ],
-
     // Modules Right    
     "modules-right": [
-       // "custom/updates",
+        // "custom/updates",
         "group/sys-info",
         "group/clock",
         "custom/notification",

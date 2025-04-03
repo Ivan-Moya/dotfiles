@@ -1,0 +1,59 @@
+set ideajoin
+set surround
+let mapleader = " "
+set visualbell
+set clipboard+=unnamed
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=10
+set which-key
+set timeoutlen=1000
+
+" Do incremental searching.
+#set incsearch
+
+noremap jk <Esc>
+imap jk <Esc>
+
+
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+set number relativenumber
+
+" Mapping for multiple cursors
+let g:multi_cursor_use_default_mapping=0
+
+let g:multi_cursor_start_word_key      = '<A-d>'
+let g:multi_cursor_select_all_word_key = '<A-a>'
+let g:multi_cursor_start_key           = 'g<A-d>'
+let g:multi_cursor_select_all_key      = 'g<A-a>'
+let g:multi_cursor_next_key            = '<A-d>'
+let g:multi_cursor_prev_key            = '<A-s>'
+let g:multi_cursor_skip_key            = '<A-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+
+" actions
+map <leader>h <Action>(PreviousTab)
+map <leader>l <Action>(NextTab)
+map <leader>g <Action>(Generate)
+map <leader>r <Action>(Rename)
+map <leader>v <Action>(CheckinProject)
+map <leader>n <Action>(NewClass)
+map <leader>s <Action>(ShowErrorDescription)
+map <leader>f <Action>(ReformatCode)
+map <leader>e <Action>(RecentFiles)
+nmap <M-/> :action CommentByLineComment<CR>
+vmap <M-/> :action CommentByLineComment<CR>
+
+
+inoremap <M-a> á
+inoremap <M-e> é
+inoremap <M-i> í
+inoremap <M-o> ó
+inoremap <M-u> ú
+inoremap <M-n> ñ
+
