@@ -97,7 +97,7 @@
 
 #custom-power-menu {
   border-radius: 12px;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 15px 0px 10px;
   margin: 10px 10px 10px 10px;
   color: @red;
 }
@@ -125,7 +125,7 @@
   font-size: 20px;
   color: @blue;
   border-radius: 12px;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 5px 0px 10px;
   margin: 10px 10px 10px 0px;
 }
 /* Styling brightness and volume and slider */
