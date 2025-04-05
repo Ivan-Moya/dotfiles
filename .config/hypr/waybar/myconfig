@@ -1,5 +1,6 @@
 {
     // General Settings
+    "height":"40",
     "layer": "top",
     "margin-bottom": 0,
     "margin-left": 0,

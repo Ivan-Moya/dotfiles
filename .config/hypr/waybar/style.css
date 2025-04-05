@@ -1,12 +1,12 @@
 @import "colors.css";
 
 * {
-  font-family:  "CaskaydiaCove Nerd Font",  JetBrainsMono Nerd Font Mono ,monospace, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "CaskaydiaCove Nerd Font", JetBrainsMono Nerd Font Mono,
+    monospace, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   border: none;
   border-radius: 0px;
   font-size: 16px;
 }
-
 
 #waybar {
   background: transparent;
@@ -23,7 +23,7 @@
 
 #workspaces button {
   color: @lavender;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 0.4rem;
   transition: all 0.3s ease-in-out;
 }
@@ -48,14 +48,13 @@
 #custom-lock,
 #custom-power-menu {
   background-color: @surface0;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
 }
 
 #clock {
   color: @blue;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
+  border-radius: 12px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 0px;
 }
 
 #battery {
@@ -74,31 +73,33 @@
   color: @yellow;
 }
 
-#backlight, #battery {
-    border-radius: 0;
+#backlight,
+#battery {
+  border-radius: 0;
 }
 
 #pulseaudio {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  padding: 2px 10px 0px 10px;
-  margin: 10px 15px 10px 0px;
+  border-radius: 12px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 0px;
 }
 
-#custom-music {
-  color: @mauve;
+#mpd {
+  color: @green;
   border-radius: 1rem;
 }
 
 #custom-lock {
-    border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
 }
 
 #custom-power-menu {
-    margin-right: 1rem;
-    border-radius: 0px 1rem 1rem 0px;
-    color: @red;
+  border-radius: 12px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 10px;
+  color: @red;
 }
 
 #tray {
@@ -106,10 +107,10 @@
   border-radius: 1rem;
 }
 #network {
-  border-radius: 1rem;
-  margin: 5px;
   background-color: @surface0;
-  margin-left: 1rem;
+  border-radius: 12px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 0px;
 }
 
 #network.disconnected {
@@ -121,51 +122,52 @@
 
 #custom-appmenu {
   background-color: @surface0;
-  font-size: 16px;
+  font-size: 20px;
   color: @blue;
-  border-radius: 15px;
-  padding: 2px 10px 0px 10px;
-  margin: 10px 15px 10px 10px;
+  border-radius: 12px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 0px;
 }
 /* Styling brightness and volume and slider */
 #pulseaudio-slider,
 #backlight-slider {
-    border: none;
+  border: none;
 }
 
 #pulseaudio-slider {
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #backlight-slider {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 #pulseaudio-slider slider,
 #backlight-slider slider {
-    margin-left: -10px;
-    min-width: 10px;
-    min-height: 10px;
-    background: transparent;
-    box-shadow: none;
-    padding: 0px;
-
+  margin-left: -10px;
+  min-width: 10px;
+  min-height: 10px;
+  background: transparent;
+  box-shadow: none;
+  padding: 0px;
 }
 
 #pulseaudio-slider trough,
 #backlight-slider trough {
-    min-width: 80px;
-    border-radius: 5px;
-    background-color: @surface0;
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: @surface0;
 }
 
 #pulseaudio-slider highlight,
 #backlight-slider highlight {
-    border-radius: 5px;
-    min-height: 8px;
+  border-radius: 5px;
+  min-height: 8px;
 }
 #bluetooth {
-  margin-right: 15px;
+  border-radius: 12px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 0px;
   background-color: @surface0;
 }
