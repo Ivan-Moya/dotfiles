@@ -1,36 +1,31 @@
 {
     // General Settings
-    // Position TOP
     "layer": "top",
     "margin-bottom": 0,
-    "spacing": 4,
-    "layer": "top",
     "margin-left": 0,
     "margin-right": 0,
-    "spacing": 0,
-    // Load Modules
-    "include": [
-        // "~/dotfiles/.settings/waybar-quicklinks.json",
-        "~/.config/hypr/waybar/modules.json"
-    ],
+    "spacing": 4,  // Unified spacing value
+    "include": ["~/.config/hypr/waybar/modules.json"],  // Full path for safety
+
     // Modules Left
     "modules-left": [
         "custom/appmenu",
         "hyprland/window",
+        "wlr/taskbar",
+        "tray"
     ],
+
     // Modules Center
     "modules-center": [
         "hyprland/workspaces",
-        //"custom/pacman",
-        "mpd",
-        "tray",
+        "mpd"
     ],
-    // Modules Right    
+
+    // Modules Right
     "modules-right": [
-        // "custom/updates",
         "group/sys-info",
         "group/clock",
-        "custom/notification",
-        "custom/power-button"
+        "backlight",  // Fixed from "/backlight"
+        "custom/power-menu"
     ]
 }

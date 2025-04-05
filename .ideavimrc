@@ -46,6 +46,8 @@ map <leader>n <Action>(NewClass)
 map <leader>s <Action>(ShowErrorDescription)
 map <leader>f <Action>(ReformatCode)
 map <leader>e <Action>(RecentFiles)
+map <leader>t <Action>(ActivateTerminalToolWindow)
+
 nmap <M-/> :action CommentByLineComment<CR>
 vmap <M-/> :action CommentByLineComment<CR>
 
