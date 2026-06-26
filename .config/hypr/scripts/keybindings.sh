@@ -7,32 +7,46 @@
 #           |___/                             |___/
 #
 # -----------------------------------------------------
-# Get keybindings location based on variation
+# Resolve the keybinding file relative to this script
 # -----------------------------------------------------
-config_file=$(<~/.config/hypr/conf/keybinding.conf)
-config_file=${config_file//source = ~//home/$USER}
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+config_file="$script_dir/../keybinding.conf"
 
 # -----------------------------------------------------
 # Path to keybindings config file
 # -----------------------------------------------------
 echo "Reading from: $config_file"
 
-keybinds=$(awk -F'[=#]' '
-    $1 ~ /^bind/ {
-        # Replace the string "$mainMod" with "SUPER" (for the super key)
-        gsub(/\$mainMod/, "SUPER", $0)
+keybinds=$(awk '
+    /^[[:space:]]*#/ { next }
+    /^[[:space:]]*$/ { next }
+    $1 ~ /^(bind|binde|bindl|bindm)$/ {
+        line = $0
 
-        # Remove "bind" and extra spaces, if any, at the beginning of the line
-        gsub(/^bind[[:space:]]*=+[[:space:]]*/, "", $0)
+        # Replace the string "$mainMod" with "SUPER" for display purposes.
+        gsub(/\$mainMod/, "SUPER", line)
 
-        # Split the keybinding part (e.g., "Mod1,Return") using a comma
-        split($1, kbarr, ",")
+        # Remove the binding keyword and normalize whitespace.
+        sub(/^[[:space:]]*(bind|binde|bindl|bindm)[[:space:]]*=[[:space:]]*/, "", line)
 
-        # Format the keybinding and associated command and prepare for output:
-        # Concatenate the two keybinding keys (e.g., "Mod1" + "Return") and append the command
-        print kbarr[1] "  + " kbarr[2] "\r" $2
+        # Split into modifier, key, and command fields.
+        n = split(line, parts, ",")
+        if (n < 3) next
+
+        mod = parts[1]
+        key = parts[2]
+        cmd = parts[3]
+        for (i = 4; i <= n; i++) {
+            cmd = cmd "," parts[i]
+        }
+
+        gsub(/^[[:space:]]+|[[:space:]]+$/, "", mod)
+        gsub(/^[[:space:]]+|[[:space:]]+$/, "", key)
+        gsub(/^[[:space:]]+|[[:space:]]+$/, "", cmd)
+
+        print mod "  + " key "\r" cmd
     }
 ' "$config_file")
 
 sleep 0.2
-rofi -dmenu -i -markup -eh 2 -replace -p "Keybinds" -config ~/.config/rofi/config-compact.rasi <<<"$keybinds"
+rofi -dmenu -i -markup -eh 2 -replace -p "Keybinds" -config ~/.config/hypr/rofi/config-compact.rasi <<<"$keybinds"

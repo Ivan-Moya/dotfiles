@@ -1,45 +1,55 @@
 @import "colors.css";
 
 * {
-  font-family: "CaskaydiaCove Nerd Font", JetBrainsMono Nerd Font Mono,
-    monospace, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  border: none;
-  border-radius: 0px;
-  font-size: 16px;
+    font-family:
+        Exo2 SemiBold,
+        CaskaydiaCove Nerd Font,
+        Helvetica,
+        JetBrainsMono Nerd Font Mono,
+        monospace,
+        FontAwesome,
+        Roboto,
+        Arial,
+        sans-serif;
+    border: none;
+    border-radius: 0px;
+    font-size: 18px;
 }
 
 #waybar {
-  background: transparent;
-  color: @text;
-  margin: 5px 5px;
+    background: transparent;
+    color: @text;
+    margin: 3px 3px;
 }
 
 #workspaces {
-  border-radius: 1rem;
-  margin: 5px;
-  background-color: @surface0;
-  margin-left: 1rem;
+    border-radius: 1rem;
+    margin: 10px 0px 10px 1rem;
+    background-color: @surface0;
+    padding: 0px 6px;
 }
 
 #workspaces button {
-  color: @lavender;
-  border-radius: 0.5rem;
-  padding: 0.4rem;
-  transition: all 0.3s ease-in-out;
+    color: @lavender;
+    border-radius: 0.5rem;
+    padding: 0px 10px;
+    margin: 0px 2px;
+    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: @sky;
-  border-radius: 1rem;
-  transition: all 0.3s ease-in-out;
+    color: @sky;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
+    color: @blue;
+    border-radius: 1rem;
 }
 
 #custom-music,
+#custom-keyboard,
 #tray,
 #backlight,
 #clock,
@@ -47,127 +57,218 @@
 #pulseaudio,
 #custom-lock,
 #custom-power-menu {
-  background-color: @surface0;
+    background-color: @surface0;
 }
 
 #clock {
-  color: @blue;
-  border-radius: 12px;
-  padding: 0px 10px 0px 10px;
-  margin: 10px 10px 10px 0px;
+    color: @blue;
+    border-radius: 12px;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 10px 10px 0px;
 }
 
 #battery {
-  color: @green;
+    color: @green;
 }
 
 #battery.charging {
-  color: @green;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {
-  color: @red;
+    color: @red;
 }
 
 #backlight {
-  color: @yellow;
+    color: @yellow;
 }
 
 #backlight,
 #battery {
-  border-radius: 0;
+    border-radius: 0;
 }
 
 #pulseaudio {
-  color: @maroon;
-  border-radius: 12px;
-  padding: 0px 10px 0px 10px;
-  margin: 10px 10px 10px 0px;
+    background-color: @surface0;
+    color: @maroon;
+    border-radius: 12px;
+    padding: 0px 12px 0px 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+#window {
+    background-color: @surface0;
+    color: @text;
+    border-radius: 12px;
+    padding: 0px 12px 0px 10px;
+    margin: 10px 10px 10px 0px;
 }
 
 #mpd {
-  color: @green;
-  border-radius: 1rem;
+    background-color: @surface0;
+    color: @teal;
+    border-radius: 12px;
+    padding: 0px 12px 0px 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+#mpd:hover {
+    color: @sky;
+}
+
+#mpd.disconnected {
+    color: @overlay1;
+}
+
+#mpd.paused {
+    color: @yellow;
+}
+
+#mpd.stopped {
+    color: @overlay1;
 }
 
 #custom-lock {
-  border-radius: 1rem 0px 0px 1rem;
-  color: @lavender;
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
 }
 
 #custom-power-menu {
-  border-radius: 12px;
-  padding: 0px 15px 0px 10px;
-  margin: 10px 10px 10px 10px;
-  color: @red;
+    border-radius: 12px;
+    padding: 0px 15px 0px 10px;
+    margin: 10px 10px 10px 10px;
+    color: @red;
 }
 
 #tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
+    background-color: @surface0;
+    margin-right: 1rem;
+    border-radius: 1rem;
 }
 #network {
-  background-color: @surface0;
-  border-radius: 12px;
-  padding: 0px 10px 0px 10px;
-  margin: 10px 10px 10px 0px;
+    background-color: @surface0;
+    border-radius: 12px;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+#network.bandwidth {
+    background-color: @surface0;
+    border-radius: 12px;
+    padding: 0px 8px 0px 8px;
+    margin: 8px 8px 8px 0px;
+    color: @teal;
 }
 
 #network.disconnected {
-  background-color: @red;
+    background-color: @red;
 }
 #backlight {
-  background-color: #90b1b1;
+    background-color: #90b1b1;
 }
 
 #custom-appmenu {
-  background-color: @surface0;
-  font-size: 20px;
-  color: @blue;
-  border-radius: 12px;
-  padding: 0px 5px 0px 10px;
-  margin: 10px 10px 10px 0px;
+    background-color: @surface0;
+    font-size: 20px;
+    color: @blue;
+    border-radius: 12px;
+    padding: 0px 5px 0px 10px;
+    margin: 10px 10px 10px 0px;
 }
+
+#custom-keyboard {
+    background-color: @surface0;
+    color: @lavender;
+    border-radius: 12px;
+    padding: 0px 12px 0px 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+#custom-keyboard.us {
+    color: @blue;
+}
+
+#custom-keyboard.es {
+    color: @peach;
+}
+
+#custom-updates {
+    background-color: @surface0;
+    color: @yellow;
+    border-radius: 12px;
+    padding: 0px 12px 0px 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+#custom-pacman {
+    background-color: @surface0;
+    color: @green;
+    border-radius: 12px;
+    padding: 0px 12px 0px 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+#custom-updates:hover {
+    color: @peach;
+}
+
+#custom-pacman:hover {
+    color: @sapphire;
+}
+
 /* Styling brightness and volume and slider */
 #pulseaudio-slider,
 #backlight-slider {
-  border: none;
+    border: none;
+    min-width: 95px;
+    margin: 0 6px;
 }
 
 #pulseaudio-slider {
-  margin-left: 5px;
-  margin-right: 5px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
 #backlight-slider {
-  margin-left: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
 #pulseaudio-slider slider,
 #backlight-slider slider {
-  margin-left: -10px;
-  min-width: 10px;
-  min-height: 10px;
-  background: transparent;
-  box-shadow: none;
-  padding: 0px;
+    min-width: 0;
+    min-height: 0;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 #pulseaudio-slider trough,
 #backlight-slider trough {
-  min-width: 80px;
-  border-radius: 5px;
-  background-color: @surface0;
+    min-width: 90px;
+    min-height: 8px;
+    border-radius: 5px;
+    background-color: @surface1;
 }
 
 #pulseaudio-slider highlight,
 #backlight-slider highlight {
-  border-radius: 5px;
-  min-height: 8px;
+    min-height: 8px;
+    border-radius: 5px;
+}
+
+#pulseaudio-slider highlight {
+    background-color: @maroon;
+}
+
+#backlight-slider highlight {
+    background-color: @yellow;
 }
 #bluetooth {
-  border-radius: 12px;
-  padding: 0px 10px 0px 10px;
-  margin: 10px 10px 10px 0px;
-  background-color: @surface0;
+    border-radius: 12px;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 10px 10px 0px;
+    background-color: @surface0;
 }

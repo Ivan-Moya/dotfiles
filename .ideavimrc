@@ -47,6 +47,8 @@ map <leader>s <Action>(ShowErrorDescription)
 map <leader>f <Action>(ReformatCode)
 map <leader>e <Action>(RecentFiles)
 map <leader>t <Action>(ActivateTerminalToolWindow)
+map <leader>T <Action>(HideActiveWindow)
+map <leader>p <Action>(Run)
 
 nmap <M-/> :action CommentByLineComment<CR>
 vmap <M-/> :action CommentByLineComment<CR>

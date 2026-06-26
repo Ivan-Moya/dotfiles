@@ -1,18 +1,21 @@
 {
     // General Settings
-    "height":"40",
+    "height":"16",
     "layer": "top",
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
-    "spacing": 4,  // Unified spacing value
+    "spacing": 2,  // Unified spacing value
     "include": ["~/.config/hypr/waybar/modules.json"],  // Full path for safety
 
     // Modules Left
     "modules-left": [
         "custom/appmenu",
         "hyprland/window",
-        "wlr/taskbar",
+        "custom/keyboard",
+        "custom/updates",
+        "custom/pacman",
+        //"wlr/taskbar",
         "tray"
     ],
 
